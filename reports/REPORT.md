@@ -21,9 +21,9 @@ Tham khảo thêm (đếm được từ `annotations/clip_02/gt.txt`, 7 track, 2
 
 Ba tình huống khó nhất khi gán clip này, và bạn xử lý thế nào:
 
-1. co nhieu xe
-2. co cac xe chong nhau
-3. xe xuat hien bat ngo
+1. Nhiều xe xuất hiện cùng lúc trong khung, dễ nhảy qua lại giữa các xe khi vẽ → xử lý bằng cách làm xong hẳn một xe rồi mới sang xe khác (đúng thứ tự GUIDE.md khuyến nghị), tránh tạo ID switch do mất tập trung.
+2. Các xe chồng lên nhau / che khuất một phần khi cắt nhau → áp luật che <25 frame (2 giây) vẫn giữ ID cũ, đặt keyframe dày hơn ngay trước và sau đoạn chồng lấp để bbox không trôi khi xe tách ra.
+3. Xe xuất hiện bất ngờ, còn nhỏ/mờ ở rìa khung → chờ đến frame đầu tiên nhận diện chắc chắn là xe bốn bánh mới bắt đầu track, tránh đoán bừa lúc còn mơ hồ (đây cũng là nguyên nhân track 6 của tôi thiếu 27% quãng đời so với gold — tôi bắt đầu quá muộn).
 
 ## 2. Tự kiểm và kiểm chéo
 
@@ -115,7 +115,7 @@ DetA: 0.649 → 0.711 (+0.062). FP gần như không đổi (88 → 91), nhưng 
 
 Bạn sẽ sửa gì trong `GUIDELINE_MINI.md`, và đổi gì trong quy trình làm việc của mình?
 
-khong sua gi va khong doi gi
+Sẽ chuẩn hóa ngay 2 luật mà `GUIDELINE_MINI.md` mục 5 đã chỉ ra còn thiếu: (1) luật cho xe đỗ/đứng yên — ghi rõ "vẫn track suốt bằng 1 ID" ngay từ đầu để tránh mất thời gian nghi ngờ mỗi khi `check_mot_labels.py` cảnh báo giả; (2) ngưỡng bắt đầu track cho xe nhỏ/mờ — đặt tiêu chí cụ thể hơn ("thấy rõ 4 bánh và khung xe" thay vì chỉ "xác định được là xe") để tránh bắt đầu muộn như ca track 6. Về quy trình, sẽ chạy `check_mot_labels.py` và `visualize_tracks.py` ngay sau khi gán xong mỗi 2–3 xe thay vì đợi đến cuối, để bắt lỗi sớm hơn thay vì dồn hết vào bước tự kiểm cuối cùng.
 
 ## 7. Tệp đã nộp
 
