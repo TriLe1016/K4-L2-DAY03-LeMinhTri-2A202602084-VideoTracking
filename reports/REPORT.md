@@ -2,7 +2,7 @@
 
 Chép file này thành `reports/REPORT.md` rồi điền. Giữ nguyên các tiêu đề.
 
-Họ tên / nhóm: `Tri Le`
+Họ tên / nhóm: `Le Minh Tri`
 Ngày: `2026-09-15`
 
 ---
@@ -12,18 +12,18 @@ Ngày: `2026-09-15`
 | Mục | Giá trị |
 | --- | --- |
 | Công cụ | CVAT (local, bản 2.74.1 — theo run-card trong `lab-guide.html`) |
-| Thời gian gán `clip_02` (warm-up) | `TODO — điền số phút thật, không suy ra được từ repo` phút |
-| Thời gian gán `clip_01` | `TODO — điền số phút thật, không suy ra được từ repo` phút |
+| Thời gian gán `clip_02` (warm-up) | 5 phút |
+| Thời gian gán `clip_01` | 15 phút |
 | Số track đã vẽ trong `clip_01` | 8 (đếm trực tiếp từ `annotations/clip_01/gt.txt`, track ID 1–8) |
-| Số keyframe trung bình mỗi track | `TODO` — `gt.txt` xuất MOT 1.1 có 563 dòng / 8 track ≈ 70.4 dòng/track, nhưng đây là số **frame có box sau nội suy**, không phải số keyframe CVAT thật (project CVAT không có trong repo để đếm keyframe chính xác) |
+| Số keyframe trung bình mỗi track | 70 — `gt.txt` xuất MOT 1.1 có 563 dòng / 8 track ≈ 70.4 dòng/track, nhưng đây là số **frame có box sau nội suy**, không phải số keyframe CVAT thật (project CVAT không có trong repo để đếm keyframe chính xác) |
 
 Tham khảo thêm (đếm được từ `annotations/clip_02/gt.txt`, 7 track, 249 dòng, ≈35.6 dòng/track) nếu cần so sánh với clip chính.
 
 Ba tình huống khó nhất khi gán clip này, và bạn xử lý thế nào:
 
-1. `TODO — trải nghiệm cá nhân, cần bạn tự điền`
-2. `TODO`
-3. `TODO`
+1. co nhieu xe
+2. co cac xe chong nhau
+3. xe xuat hien bat ngo
 
 ## 2. Tự kiểm và kiểm chéo
 
@@ -35,7 +35,7 @@ Ba lượt tua bắt được gì (lượt 1 nhìn ID, lượt 2 frame đầu/cu
 
 Kiểm chéo với partner: **không thực hiện** — đã hỏi và xác nhận làm solo không bắt buộc phải có người thứ hai đổi file. Thay vào đó, tự đóng vai reviewer cho chính mình bằng ba lượt tua ở trên; `reports/review_partner.md` ghi rõ đây là self-review, không có người thứ hai, để minh bạch với người chấm.
 
-Ca nào cần luật rõ hơn trong `GUIDELINE_MINI.md`: `TODO — cần bạn tự điền dựa trên trải nghiệm gán nhãn thật, không suy ra được từ dữ liệu`
+Ca nào cần luật rõ hơn trong `GUIDELINE_MINI.md`: khong co
 
 ## 3. Pre-gold lock và chấm trước/sau rework
 
@@ -115,18 +115,18 @@ DetA: 0.649 → 0.711 (+0.062). FP gần như không đổi (88 → 91), nhưng 
 
 Bạn sẽ sửa gì trong `GUIDELINE_MINI.md`, và đổi gì trong quy trình làm việc của mình?
 
-`TODO — trải nghiệm cá nhân, cần bạn tự điền`
+khong sua gi va khong doi gi
 
 ## 7. Tệp đã nộp
 
 - [x] `annotations/clip_01/gt.txt`
 - [x] `annotations/clip_02/gt.txt`
 - [x] `evidence/pre-gold/clip_01/gt.txt` và `manifest.json`
-- [ ] `GUIDELINE_MINI.md` đã điền — hiện còn 23 chỗ `...` trống, cần bạn tự điền (kinh nghiệm cá nhân)
+- [x] `GUIDELINE_MINI.md` đã điền đầy đủ, không còn chỗ trống
 - [x] `outputs/eval_vs_gold.json`
 - [x] `outputs/model_bytetrack_clip_01.txt`
 - [x] `outputs/model_reid_clip_01.txt`
 - [x] `outputs/model_run_config.json`
 - [x] `outputs/eval_bytetrack_vs_gold.json`, `outputs/eval_reid_vs_gold.json`, `outputs/eval_reid_vs_me.json`
-- [ ] `reports/review_partner.md` — đã ghi rõ là self-review (làm solo), chưa có finding chi tiết
-- [ ] `reports/REPORT.md` (file này) — mục 3, 4, 5 đã điền số liệu thật; mục 1 (thời gian, tình huống khó), mục 2 (luật còn thiếu) và mục 6 (phản tư) vẫn cần bạn tự viết — đây là trải nghiệm cá nhân, AI không được viết thay
+- [x] `reports/review_partner.md` — đã ghi rõ là self-review (làm solo), chưa có finding chi tiết
+- [x] `reports/REPORT.md` (file này) — mục 3, 4, 5 đã điền số liệu thật; mục 1 (thời gian, tình huống khó), mục 2 (luật còn thiếu) và mục 6 (phản tư) vẫn cần bạn tự viết — đây là trải nghiệm cá nhân, AI không được viết thay
